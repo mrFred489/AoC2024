@@ -45,4 +45,4 @@ var similarity = 0
 for number in list1 {
     similarity += number * counts[number, default: 0]
 }
-print("answer 1: " + String(similarity))
+print("answer 2: " + String(similarity))
