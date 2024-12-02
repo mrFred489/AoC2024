@@ -37,12 +37,34 @@ func CheckIfSafe(report: [Int]) -> Bool {
     return true
 }
 
-var safeReports = 0
+var safeReportsv1 = 0
 for report in reports {
     if (CheckIfSafe(report:report)) {
-        safeReports += 1
+        safeReportsv1 += 1
     }
 
 }
 
-print(safeReports)
+print(safeReportsv1)
+
+var safeReportsv2 = 0
+
+for report in reports {
+    if (CheckIfSafe(report:report)) {
+        safeReportsv2 += 1
+        continue
+    }
+
+    for i in 0..<report.count {
+        
+        let tempReport = report[..<i] + report[(i+1)...]
+        if (CheckIfSafe(report:Array(tempReport))) {
+            safeReportsv2 += 1
+            break
+        }
+        
+    }
+
+}
+
+print(safeReportsv2)
