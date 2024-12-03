@@ -5,7 +5,7 @@ import Foundation
 //let location = "Resources/testInput.txt"
 let location = "Resources/input.txt"
 let path = URL(fileURLWithPath: location)
-let text = try? String(contentsOf: path)
+let text = try? String(contentsOf: path, encoding:String.Encoding.utf8)
 
 let lines = text!.components(separatedBy: "\n")
 
